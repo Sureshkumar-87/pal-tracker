@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import javax.sql.DataSource;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
@@ -18,8 +19,10 @@ import java.util.TimeZone;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class JdbcTimeEntryRepositoryTest {
-    private TimeEntryRepository subject;
+    //private TimeEntryRepository subject;
+    private JdbcTimeEntryRepository subject;
     private JdbcTemplate jdbcTemplate;
+    private DataSource dataSource;
 
     @BeforeEach
     public void setUp() {
